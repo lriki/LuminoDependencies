@@ -13,6 +13,7 @@ set(LN_LIB_OUTPUT_DIR "${LN_LIB_OUTPUT_ROOT_DIR}/${PROJECT_NAME}/${LN_LIB_OUTPUT
 add_library(${PROJECT_NAME} STATIC ${LN_SOURCES_libogg})
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_NAME}${LN_STATIC_LIB_POSTFIX}")
 set_target_properties(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
+set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
 
 # include dir
 include_directories(

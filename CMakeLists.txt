@@ -63,6 +63,10 @@ if (WIN32)
 	else()
 		set(LN_LIB_OUTPUT_LOCAL_DIR "${LN_LIB_OUTPUT_LOCAL_DIR}_MD/")
 	endif()
+
+elseif(APPLE)
+	set(LN_LIB_OUTPUT_LOCAL_DIR "${LN_LIB_OUTPUT_LOCAL_DIR}OSX")
+
 endif()
 
 #------------------------------------------------------------------------------
@@ -104,7 +108,9 @@ set(USE_OPENGL3 OFF)
 
 set(LN_LIB_OUTPUT_DIR "${LN_LIB_OUTPUT_ROOT_DIR}/effekseer/${LN_LIB_OUTPUT_LOCAL_DIR}")
 set_target_properties(effekseer PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
+set_target_properties(effekseer PROPERTIES PREFIX "")
 set_target_properties(effekseer_renderer_gl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
+set_target_properties(effekseer_renderer_gl PROPERTIES PREFIX "")
 
 if (MSVC)
 	set_target_properties(effekseer_renderer_dx9 PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
@@ -113,4 +119,3 @@ endif()
 
 # copy include files
 file(COPY "External/EffekseerRuntime101/src/include" DESTINATION "${LN_LIB_OUTPUT_ROOT_DIR}/effekseer")
-

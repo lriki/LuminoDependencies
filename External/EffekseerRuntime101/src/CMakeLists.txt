@@ -181,6 +181,7 @@ set(effekseer_sound_xaudio2_src
 # �C���N���[�h�̐ݒ�
 include_directories(
 	Effekseer/
+	${CMAKE_SOURCE_DIR}/External
 	${CMAKE_SOURCE_DIR}/External/libpng-1.6.12
 	)
 
