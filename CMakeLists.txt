@@ -17,8 +17,8 @@ option(LN_BUILD_X64 "Architecture." OFF)
 #------------------------------------------------------------------------------
 # Apply options
 #------------------------------------------------------------------------------
-set(LN_STATIC_LIB_POSTFIX "_static")
-set(LN_LIB_OUTPUT_ROOT_DIR "${CMAKE_SOURCE_DIR}/Dependencies/")
+set(LN_STATIC_LIB_POSTFIX "")
+set(LN_LIB_OUTPUT_ROOT_DIR "${CMAKE_SOURCE_DIR}/LuminoDependencies/")
 set(LN_LIB_OUTPUT_LOCAL_DIR "lib/")
 
 if (WIN32)
