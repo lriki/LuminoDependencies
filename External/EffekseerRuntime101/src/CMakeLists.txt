@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 2.8)
 
 # MSVC�����ݒ�
 if (MSVC)
-	option(USE_MSVC_RUNTIME_LIBRARY_DLL "Use MSVC runtime library DLL" OFF)
+	#option(USE_MSVC_RUNTIME_LIBRARY_DLL "Use MSVC runtime library DLL" OFF)
 endif()
 
 if (MSVC)
