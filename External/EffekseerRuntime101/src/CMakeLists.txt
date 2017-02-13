@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 2.8)
 
 # MSVC�����ݒ�
 if (MSVC)
-	#option(USE_MSVC_RUNTIME_LIBRARY_DLL "Use MSVC runtime library DLL" OFF)
+	#option(LN_MSVC_STATIC_RUNTIME "Use MSVC runtime library DLL" OFF)
 endif()
 
 if (MSVC)
@@ -203,7 +203,7 @@ endif()
 
 # �t���O����
 if (MSVC)
-	if (NOT USE_MSVC_RUNTIME_LIBRARY_DLL)
+	if (LN_MSVC_STATIC_RUNTIME)
 		foreach (flag CMAKE_C_FLAGS
 			CMAKE_C_FLAGS_DEBUG
 			CMAKE_C_FLAGS_RELEASE

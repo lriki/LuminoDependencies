@@ -24,7 +24,7 @@ for t in targets:
 	os.chdir(t[0])
 
 	args = "cmake -G\"{0}\" -DLN_USE_UNICODE_CHAR_SET={1} -DLN_MSVC_STATIC_RUNTIME={2} -DLN_BUILD_X64={3} ../..".format(t[1], t[2], t[3], t[4])
-	print args
+	
 	proc = Popen(args)
 	proc.communicate()
 	#print stdout_data

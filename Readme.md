@@ -12,6 +12,6 @@ Dependencies
 How to build
 --------------------
 1. Run build.py from "developer command prompt for VS2015"
-2. Compress "Dependencies" folder
+2. Compress "LuminoDependencies" folder
 
 
