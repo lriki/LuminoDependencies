@@ -4,6 +4,7 @@
 //----------------------------------------------------------------------------------
 // Include
 //----------------------------------------------------------------------------------
+#include <memory>
 #include "EffekseerRendererDX11.Renderer.h"
 #include "EffekseerRendererDX11.ModelLoader.h"
 

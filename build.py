@@ -6,12 +6,16 @@ targets = [
 	# DirName, 					VSTarget,			Unicode,	StaticRuntime,	X64,	Platform
 	["build_msvc120x86_MT",		"Visual Studio 12",	"OFF",		"ON",			"OFF",	"Win32"],
 	["build_msvc120x86u_MT",	"Visual Studio 12",	"ON",		"ON",			"OFF",	"Win32"],
-	["build_msvc140x86_MT",		"Visual Studio 14",	"OFF",		"ON",			"OFF",	"Win32"],
-	["build_msvc140x86u_MT",	"Visual Studio 14",	"ON",		"ON",			"OFF",	"Win32"],
 	["build_msvc120x86_MD",		"Visual Studio 12",	"OFF",		"OFF",			"OFF",	"Win32"],
 	["build_msvc120x86u_MD",	"Visual Studio 12",	"ON",		"OFF",			"OFF",	"Win32"],
+	["build_msvc140x86_MT",		"Visual Studio 14",	"OFF",		"ON",			"OFF",	"Win32"],
+	["build_msvc140x86u_MT",	"Visual Studio 14",	"ON",		"ON",			"OFF",	"Win32"],
 	["build_msvc140x86_MD",		"Visual Studio 14",	"OFF",		"OFF",			"OFF",	"Win32"],
-	["build_msvc140x86u_MD",	"Visual Studio 14",	"ON",		"OFF",			"OFF",	"Win32"]
+	["build_msvc150x86u_MD",	"Visual Studio 14",	"ON",		"OFF",			"OFF",	"Win32"],
+	["build_msvc150x86_MT",		"Visual Studio 15",	"OFF",		"ON",			"OFF",	"Win32"],
+	["build_msvc150x86u_MT",	"Visual Studio 15",	"ON",		"ON",			"OFF",	"Win32"],
+	["build_msvc150x86_MD",		"Visual Studio 15",	"OFF",		"OFF",			"OFF",	"Win32"],
+	["build_msvc150x86u_MD",	"Visual Studio 15",	"ON",		"OFF",			"OFF",	"Win32"]
 	]
 
 if not os.path.exists("build"):
