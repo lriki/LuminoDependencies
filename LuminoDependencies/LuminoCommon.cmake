@@ -1,6 +1,8 @@
 
+set(CMAKE_DEBUG_POSTFIX "d")
+
 #------------------------------------------------------------------------------
-# Options
+# options
 #------------------------------------------------------------------------------
 
 # Unicode char set.
@@ -13,7 +15,7 @@ option(LN_MSVC_STATIC_RUNTIME "static runtime (/MT, /MTd) or DLL runtime (/MD, /
 option(LN_BUILD_X64 "Architecture." OFF)
 
 #------------------------------------------------------------------------------
-# Apply options
+# make lib dir
 #------------------------------------------------------------------------------
 set(LN_STATIC_LIB_POSTFIX "")
 set(LN_LIB_OUTPUT_ROOT_DIR "${CMAKE_SOURCE_DIR}/LuminoDependencies/")
@@ -45,7 +47,7 @@ if (WIN32)
 	else()
 		set(LN_ARCH "x86")
 	endif()
-	set(LN_LIB_OUTPUT_LOCAL_DIR "${LN_LIB_OUTPUT_LOCAL_DIR}_${LN_ARCH}")
+	set(LN_LIB_OUTPUT_LOCAL_DIR "${LN_LIB_OUTPUT_LOCAL_DIR}/${LN_ARCH}")
 
 	# Runtime library
 	if (LN_MSVC_STATIC_RUNTIME)

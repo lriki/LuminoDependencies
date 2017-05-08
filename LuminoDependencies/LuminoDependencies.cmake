@@ -4,7 +4,7 @@
 #	...
 #   target_link_libraries(<Project> ${LN_DEPENDENCIES_LIBRARIES})
 
-include(LuminoCommon.cmake)
+include(${LN_DEPENDENCIES_ROOT_DIR}LuminoCommon.cmake)
 
 #------------------------------------------------------------------------------
 # Create include path, library path
