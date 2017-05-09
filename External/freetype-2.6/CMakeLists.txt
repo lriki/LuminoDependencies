@@ -58,11 +58,8 @@ set(LN_SOURCES_freetype
 
 file(GLOB LN_FREETYPE_HEADERS "include/*.h")
 
-set(LN_LIB_OUTPUT_DIR "${LN_LIB_OUTPUT_ROOT_DIR}/${PROJECT_NAME}/${LN_LIB_OUTPUT_LOCAL_DIR}")
+# create project
 add_library(${PROJECT_NAME} STATIC ${LN_SOURCES_freetype} ${LN_FREETYPE_HEADERS})
-set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_NAME}${LN_STATIC_LIB_POSTFIX}")
-set_target_properties(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
-set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
 
 include_directories("include")
 include_directories("src/truetype")
@@ -76,10 +73,6 @@ include_directories("src/psnames")
 add_definitions(-DFT_DEBUG_LEVEL_ERROR)
 add_definitions(-DFT_DEBUG_LEVEL_TRACE)
 add_definitions(-DFT2_BUILD_LIBRARY)
-
-if (MSVC)
-	add_definitions("/wd4996")		# pragma warning disable
-endif()
 
 # copy include files
 file(COPY "include" DESTINATION "${LN_LIB_OUTPUT_ROOT_DIR}/${PROJECT_NAME}")

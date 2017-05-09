@@ -4,15 +4,39 @@ project (LuminoDependencies)
 include(LuminoDependencies/LuminoCommon.cmake)
 
 #------------------------------------------------------------------------------
+macro(ln_add_common_property projectName)
+	set(LN_LIB_OUTPUT_DIR "${LN_LIB_OUTPUT_ROOT_DIR}/${projectName}/${LN_LIB_OUTPUT_LOCAL_DIR}")
+	set_target_properties(${projectName} PROPERTIES OUTPUT_NAME "${projectName}${LN_STATIC_LIB_POSTFIX}")
+	set_target_properties(${projectName} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
+	set_target_properties(${projectName} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG "${LN_LIB_OUTPUT_DIR}")
+	set_target_properties(${projectName} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${LN_LIB_OUTPUT_DIR}")
+	set_target_properties(${projectName} PROPERTIES PREFIX "")
+endmacro()
+
+
+#------------------------------------------------------------------------------
 # External
 #------------------------------------------------------------------------------
 add_subdirectory(External/zlib-1.2.7)
+ln_add_common_property(zlib)
+
 add_subdirectory(External/bullet-2.82)
+ln_add_common_property(bullet)
+
 add_subdirectory(External/freetype-2.6)
+ln_add_common_property(freetype)
+
 add_subdirectory(External/giflib-5.1.4)
+ln_add_common_property(giflib)
+
 add_subdirectory(External/libogg-1.3.2)
+ln_add_common_property(libogg)
+
 add_subdirectory(External/libpng-1.6.12)
+ln_add_common_property(libpng)
+
 add_subdirectory(External/libvorbis-1.3.5)
+ln_add_common_property(libvorbis)
 
 #---------------------------------------
 # Effekseer
@@ -41,14 +65,12 @@ set(USE_OPENGL3 OFF)
 #endif()
 
 set(LN_LIB_OUTPUT_DIR "${LN_LIB_OUTPUT_ROOT_DIR}/effekseer/${LN_LIB_OUTPUT_LOCAL_DIR}")
-set_target_properties(effekseer PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
-set_target_properties(effekseer PROPERTIES PREFIX "")
-set_target_properties(effekseer_renderer_gl PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
-set_target_properties(effekseer_renderer_gl PROPERTIES PREFIX "")
+ln_add_common_property(effekseer)
+ln_add_common_property(effekseer_renderer_gl)
 
 if (MSVC)
-	set_target_properties(effekseer_renderer_dx9 PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
-	set_target_properties(effekseer_sound_xaudio2 PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${LN_LIB_OUTPUT_DIR}")
+	ln_add_common_property(effekseer_renderer_dx9)
+	ln_add_common_property(effekseer_sound_xaudio2)
 endif()
 
 # copy include files

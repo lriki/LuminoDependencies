@@ -1,21 +1,28 @@
 import os
 import subprocess
 from subprocess import Popen
+from distutils.dir_util import copy_tree
+
+# tools
+if not os.path.exists("LuminoDependencies/Tools"):
+	os.mkdir("LuminoDependencies/Tools")
+copy_tree("Tools", "LuminoDependencies/Tools")
+
 
 targets = [
 	# DirName, 					VSTarget,			Unicode,	StaticRuntime,	X64,	Platform
-	["build_msvc120x86_MT",		"Visual Studio 12",	"OFF",		"ON",			"OFF",	"Win32"],
-	["build_msvc120x86u_MT",	"Visual Studio 12",	"ON",		"ON",			"OFF",	"Win32"],
-	["build_msvc120x86_MD",		"Visual Studio 12",	"OFF",		"OFF",			"OFF",	"Win32"],
-	["build_msvc120x86u_MD",	"Visual Studio 12",	"ON",		"OFF",			"OFF",	"Win32"],
-	["build_msvc140x86_MT",		"Visual Studio 14",	"OFF",		"ON",			"OFF",	"Win32"],
-	["build_msvc140x86u_MT",	"Visual Studio 14",	"ON",		"ON",			"OFF",	"Win32"],
-	["build_msvc140x86_MD",		"Visual Studio 14",	"OFF",		"OFF",			"OFF",	"Win32"],
-	["build_msvc150x86u_MD",	"Visual Studio 14",	"ON",		"OFF",			"OFF",	"Win32"],
-	["build_msvc150x86_MT",		"Visual Studio 15",	"OFF",		"ON",			"OFF",	"Win32"],
-	["build_msvc150x86u_MT",	"Visual Studio 15",	"ON",		"ON",			"OFF",	"Win32"],
-	["build_msvc150x86_MD",		"Visual Studio 15",	"OFF",		"OFF",			"OFF",	"Win32"],
-	["build_msvc150x86u_MD",	"Visual Studio 15",	"ON",		"OFF",			"OFF",	"Win32"]
+	["build_msvc120x86_MT",		"Visual Studio 12 2013",	"OFF",		"ON",			"OFF",	"Win32"],
+	["build_msvc120x86u_MT",	"Visual Studio 12 2013",	"ON",		"ON",			"OFF",	"Win32"],
+	["build_msvc120x86_MD",		"Visual Studio 12 2013",	"OFF",		"OFF",			"OFF",	"Win32"],
+	["build_msvc120x86u_MD",	"Visual Studio 12 2013",	"ON",		"OFF",			"OFF",	"Win32"],
+	["build_msvc140x86_MT",		"Visual Studio 14 2015",	"OFF",		"ON",			"OFF",	"Win32"],
+	["build_msvc140x86u_MT",	"Visual Studio 14 2015",	"ON",		"ON",			"OFF",	"Win32"],
+	["build_msvc140x86_MD",		"Visual Studio 14 2015",	"OFF",		"OFF",			"OFF",	"Win32"],
+	["build_msvc150x86u_MD",	"Visual Studio 14 2015",	"ON",		"OFF",			"OFF",	"Win32"],
+	["build_msvc150x86_MT",		"Visual Studio 15 2017",	"OFF",		"ON",			"OFF",	"Win32"],
+	["build_msvc150x86u_MT",	"Visual Studio 15 2017",	"ON",		"ON",			"OFF",	"Win32"],
+	["build_msvc150x86_MD",		"Visual Studio 15 2017",	"OFF",		"OFF",			"OFF",	"Win32"],
+	["build_msvc150x86u_MD",	"Visual Studio 15 2017",	"ON",		"OFF",			"OFF",	"Win32"]
 	]
 
 if not os.path.exists("build"):
@@ -41,3 +48,4 @@ for t in targets:
 
 
 	os.chdir("../")
+
