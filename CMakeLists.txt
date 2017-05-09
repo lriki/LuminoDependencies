@@ -13,6 +13,9 @@ macro(ln_add_common_property projectName)
 	set_target_properties(${projectName} PROPERTIES PREFIX "")
 endmacro()
 
+if (MSVC)
+	add_definitions("/wd4996")		# pragma warning disable
+endif()
 
 #------------------------------------------------------------------------------
 # External
