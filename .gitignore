@@ -1,7 +1,7 @@
 
 build/
 LuminoDependencies/*
-!LuminoDependencies/tools
+!LuminoDependencies/Tools
 !LuminoDependencies/LuminoCommon.cmake
 !LuminoDependencies/LuminoDependencies.cmake
 
